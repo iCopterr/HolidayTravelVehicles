@@ -4,7 +4,7 @@ import java.util.List;
 public class SaleInvoice {
     private String saleInvoiceNumber;
     private String saleDate;
-    private Customer customer;
+    private int customerID;
     private Vehicle purchasedVehicle;
     private TradeInVehicle tradeInVehicle;
     private List<DealerOption> dealerOptions = new ArrayList<>();
@@ -12,10 +12,10 @@ public class SaleInvoice {
     private double taxes;
     private double licenseFees;
 
-    public SaleInvoice(String number, String date, Customer customer, Vehicle purchasedVehicle) {
+    public SaleInvoice(String number, String date, int customerID, Vehicle purchasedVehicle) {
         this.saleInvoiceNumber = number;
         this.saleDate = date;
-        this.customer = customer;
+        this.customerID = customerID;
         this.purchasedVehicle = purchasedVehicle;
     }
 
@@ -38,7 +38,6 @@ public class SaleInvoice {
     public void printInvoice() {
         System.out.println("Invoice No: " + saleInvoiceNumber);
         System.out.println("Date: " + saleDate);
-        System.out.println("Customer: " + customer.getCustomerName());
         purchasedVehicle.displayInfo();
         System.out.println("Total: " + totalPrice);
     }
