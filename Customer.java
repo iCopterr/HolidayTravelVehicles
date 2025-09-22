@@ -1,4 +1,4 @@
-public class customer{
+public class Customer{
   private String customerID;
   private String customerName;
   private String customerAddress;
